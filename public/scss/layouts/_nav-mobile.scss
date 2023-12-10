@@ -1,0 +1,119 @@
+.nav {
+  @media (max-width: $small) {
+    // Hamburger
+    &__toggle {
+      position: absolute;
+      top: 50%;
+      right: 1.6rem;
+      transform: translateY(-50%);
+      z-index: 110;
+      display: flex;
+      align-items: center;
+      height: 2rem;
+      border: 0;
+      padding: 0;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border: 0;
+      }
+    }
+
+    .hamburger {
+      --hamburger-layer-height: 2px;
+      --hamburger-width: 22px;
+      --hamburger-color: #111;
+      --hamburger-color-active: #bfbfbf;
+      width: var(--hamburger-width);
+      height: var(--hamburger-layer-height);
+      background-color: var(--hamburger-color);
+      transition: all 0.2s ease 0s;
+      position: relative;
+
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: var(--hamburger-width);
+        height: var(--hamburger-layer-height);
+        background-color: var(--hamburger-color);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &::before {
+        top: -0.7rem;
+      }
+
+      &::after {
+        bottom: -0.7rem;
+      }
+    }
+
+    [aria-expanded="true"] {
+      .hamburger {
+        background-color: transparent;
+        &::before {
+          transform: rotatez(-45deg) translate(-4.95px, 4.95px);
+        }
+
+        &::after {
+          transform: rotatez(45deg) translate(-4.95px, -4.95px);
+        }
+      }
+    }
+
+    // mobile menu
+    &__menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: opacity 0.25s ease-out;
+
+      li {
+        &:hover {
+          background-color: var(--color-border);
+        }
+        a {
+          display: block;
+          padding: 1.6rem;
+          border-bottom: 1px solid var(--color-border);
+          color: var(--color-base);
+        }
+      }
+
+      &[data-visible="true"] {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        z-index: 9999;
+        color: #333;
+        background-color: var(--bg-color);
+      }
+    }
+
+    &__menu li.menu-item-has-children .sub-menu {
+      display: none;
+      li {
+        padding-left: 2rem;
+      }
+    }
+  }
+}
+
+.menu-item-has-children > a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}

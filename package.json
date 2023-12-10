@@ -1,0 +1,20 @@
+{
+  "name": "config",
+  "version": "1.0.0",
+  "description": "...",
+  "scripts": {
+    "sass": "sass --watch --update --style=compressed  public/scss/main.scss public/css/style.css",
+    "browsersync": "browser-sync start --no-notify --proxy \"http://facebook_oop.test\" --files \"**/*\" --b \"msedge\"",
+    "start": "npm-run-all --parallel sass browsersync"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.28.3",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.56.2"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ]
+}

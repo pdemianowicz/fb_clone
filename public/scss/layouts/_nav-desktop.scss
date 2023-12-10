@@ -1,0 +1,77 @@
+@include mq(small) {
+  .nav {
+    display: flex;
+
+    &__toggle {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+      align-items: center;
+
+      a {
+        padding: 0 2rem;
+        text-transform: uppercase;
+        color: var(--color-base);
+
+        &:hover {
+          text-decoration: underline;
+          color: var(--color-primary);
+        }
+      }
+
+      li:last-child {
+        a {
+          padding-right: 0;
+        }
+      }
+
+      .sub-menu {
+        position: absolute;
+        min-width: 200px;
+        color: #333333;
+        background-color: #fff;
+        border: solid 1px #f4f4f4;
+        border-radius: 0.25rem;
+
+        li:hover {
+          background-color: var(--color-border);
+        }
+
+        a {
+          display: block;
+          padding: 0.8rem 1.2rem;
+        }
+      }
+
+      & li.menu-item-has-children > .sub-menu {
+        display: none;
+        top: 90%;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        z-index: 10;
+      }
+
+      & > li.menu-item-has-children:hover > .sub-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+
+        & > li.menu-item-has-children {
+          position: relative;
+        }
+
+        & > li.menu-item-has-children:hover > .sub-menu {
+          top: 0;
+          left: 100%;
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

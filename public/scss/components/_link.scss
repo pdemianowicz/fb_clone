@@ -1,0 +1,36 @@
+@mixin link() {
+  color: var(--color-link-text);
+  // Create your own default content link styles here
+  // for pages and articles
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-text);
+  text-underline-offset: 0.6rem;
+  transition: all $transition-duration;
+
+  &:hover,
+  &:focus {
+    color: var(--color-link-text-hover);
+    text-decoration-color: var(--color-link-text-hover);
+  }
+}
+
+a {
+  color: #0060df;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* prettier-ignore */
+a:hover, a:focus, a:active {
+  color: #0250bb;
+  text-decoration: none;
+}
+
+p a:visited {
+  color: #b833e1;
+}
+
+.header a,
+.footer a {
+  text-decoration: none;
+}

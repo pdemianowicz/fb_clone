@@ -1,0 +1,44 @@
+$small: 850px; // 768px
+$medium: 62em; // 992px
+
+$breakpoints: (
+  small: $small,
+  medium: $medium,
+);
+
+// $breakpoints: (
+//   "small": 320px,
+//   "medium": 768px,
+//   "large": 1024px,
+// );
+
+// $sm: 480px;
+// $md: 768px;
+// $lg: 992px;
+// $xl: 1200px;
+
+$container-desktop: 1200px;
+$container-ipad: 770px;
+$container-ipad-landscape: 1024px;
+$container-macbook-air: 1440px;
+$container-mobile: 480px;
+
+// xs: 32rem, // ~512px
+// sm: 48rem, // ~768px
+// md: 64rem, // ~1024px
+// lg: 80rem, // ~1280px
+// xl: 90rem  // ~1440px
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1400px
+// );
+
+// sm: "640px",
+// md: "768px",
+// lg: "1024px",
+// xl: "1280px",

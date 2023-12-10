@@ -1,0 +1,28 @@
+.tooltip {
+  position: relative;
+
+  &::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 6px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.73);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s ease;
+    transition-delay: 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 99;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}

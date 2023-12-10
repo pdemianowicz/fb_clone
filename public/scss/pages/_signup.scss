@@ -1,0 +1,109 @@
+.form-register {
+  width: 432px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+
+  &__heading {
+    padding: 10px 16px;
+
+    h2 {
+      font-size: 32px;
+    }
+  }
+
+  form {
+    border-top: 1px solid var(--border-color);
+    padding: 10px 16px;
+
+    input {
+      width: 100%;
+      margin: 6px 0 6px 0;
+      font-size: 15px;
+      background: #f5f6f7;
+      // border-color: #bdc7d8;
+      outline: 0;
+      // padding: 14px 16px;
+      padding: 0.8rem;
+      border-radius: 6px;
+      // border: 1px solid var(--border-color);
+      border: 1px solid #bdc7d8;
+
+      &::placeholder {
+        // color: var(--placeholder-color);
+      }
+
+      &:focus {
+        border: 1px solid var(--primary-color);
+      }
+
+      &:focus::placeholder {
+        color: #bec3c9;
+      }
+    }
+
+    .fullname {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    p {
+      font-size: 11px;
+      color: #777;
+
+      a {
+        color: var(--primary-color);
+      }
+    }
+
+    button[type="submit"] {
+      background-color: #00a400;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.birthday,
+.gender {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  margin: 15px 0 10px;
+
+  small {
+    position: absolute;
+    top: -13px;
+    left: 2px;
+    color: #777;
+  }
+}
+
+.gender {
+  label {
+    padding: 6px 8px;
+    background-color: #f5f6f7;
+    border: 1px solid #bdc7d8;
+    border-radius: 6px;
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6px 0;
+  }
+}
+
+.birthday {
+  select {
+    padding: 8px;
+    background-color: #f5f6f7;
+    border: 1px solid #bdc7d8;
+    border-radius: 6px;
+  }
+}
