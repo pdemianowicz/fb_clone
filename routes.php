@@ -15,8 +15,8 @@ $router->post('/avatar', 'ProfileController@avatar');
 // $router->post('/setAvatar', 'ProfileController@deleteAvatar');
 $router->post('/bg', 'ProfileController@bg');
 
-$router->get('/register', 'registration/create.php');
-$router->post('/register', 'registration/store.php');
+$router->get('/register', 'RegistrationController@index');
+$router->post('/register', 'RegistrationController@store');
 
 $router->get('/login', 'SessionController@index');
 $router->post('/session', 'SessionController@store');
